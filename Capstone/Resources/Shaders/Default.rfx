@@ -1,0 +1,70 @@
+texture Screen;
+
+sampler TextureSampler = sampler_state
+{
+	Texture = <Screen>;
+};
+
+float4 BnW_FUNC(float2 TextureCoord : TEXCOORD0) : COLOR0
+{
+	float4 color = tex2D(TextureSampler, TextureCoord);
+
+	float value = (color.r + color.g + color.b) / 3;
+	color.r = value;
+	color.g = value;
+	color.b = value;
+
+	return color;
+}
+
+float4 FullColour(float2 TextureCoord : TEXCOORD0) : COLOR0
+{
+	return tex2D(TextureSampler, TextureCoord);
+}
+
+float4 BlurFunc(float2 TextureCoord: TEXCOORD0) : COLOR0
+{
+	float4 color;
+	color = tex2D(TextureSampler, TextureCoord);
+	float2 texTemp;// = TextureCoord;
+	texTemp.x = TextureCoord.x+0.0001;
+	texTemp.y = TextureCoord.y+0.0001;
+	color += tex2D(TextureSampler, texTemp);
+	texTemp.x = TextureCoord.x-0.0001;
+	texTemp.y = TextureCoord.y+0.0001;
+	color += tex2D(TextureSampler, texTemp);
+	texTemp.x = TextureCoord.x-0.0001;
+	texTemp.y = TextureCoord.y-0.0001;
+	color += tex2D(TextureSampler, texTemp);
+	texTemp.x = TextureCoord.x+0.0001;
+	texTemp.y = TextureCoord.y-0.0001;
+	color += tex2D(TextureSampler, texTemp);
+	return color/5;
+}
+
+technique BlackAndWhite
+{
+	pass p0
+	{
+		PixelShader = compile ps_2_0 BnW_FUNC();
+		VertexShader = NULL;
+	}
+}
+
+technique Blur
+{
+	pass p0
+	{
+		PixelShader = compile ps_2_0 BlurFunc();
+		VertexShader = NULL;
+	}
+}
+
+technique Normal
+{
+	pass p0
+	{
+		PixelShader = compile ps_2_0 FullColour();
+		VertexShader = NULL;
+	}
+}

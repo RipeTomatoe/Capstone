@@ -1,0 +1,103 @@
+﻿Build started 09/02/2012 8:58:28 PM.
+     1>Project "D:\Documents\Dropbox\Dropbox\Capstone\Game\Game.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Game.unsuccessfulbuild".
+       ClCompile:
+         E:\Programs\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"E:\Programs\DirectX SDK (June 2010)\\Include" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Capstone\FirstMenu.cpp ..\Capstone\Game.cpp ..\Capstone\main.cpp ..\Capstone\Pause.cpp
+         Pause.cpp
+         main.cpp
+         e:\programs\directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(32): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'vsprintf'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(56): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(57): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\time.h(153) : see declaration of 'asctime'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\soundengine.h(27): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\soundengine.h(45): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+         Game.cpp
+         e:\programs\directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(32): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'vsprintf'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(56): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(57): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\time.h(153) : see declaration of 'asctime'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\camera.h(23): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\dropbox\dropbox\capstone\capstone\camera.h(24): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\documents\dropbox\dropbox\capstone\capstone\camera.h(33): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\camera.h(35): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\soundengine.h(27): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\soundengine.h(45): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+         FirstMenu.cpp
+         e:\programs\directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(32): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'vsprintf'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(56): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\logmanager.h(57): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\time.h(153) : see declaration of 'asctime'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\soundengine.h(27): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\soundengine.h(45): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>d:\documents\dropbox\dropbox\capstone\capstone\firstmenu.cpp(14): warning C4244: '=' : conversion from 'double' to 'LONG', possible loss of data
+         Generating Code...
+       Link:
+         E:\Programs\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Dropbox\Dropbox\Capstone\Debug\Game.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Game.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Documents\Dropbox\Dropbox\Capstone\Debug\Game.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Dropbox\Dropbox\Capstone\Debug\Game.lib" /MACHINE:X86 Debug\FirstMenu.obj
+         Debug\Game.obj
+         Debug\main.obj
+         Debug\Pause.obj
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol _D3DXCreateFontIndirectA@12 referenced in function "public: __thiscall FirstMenu::FirstMenu(void)" (??0FirstMenu@@QAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: __thiscall UIObject::UIObject(char const *,int,int,int,int,int)" (??0UIObject@@QAE@PBDHHHHH@Z) referenced in function "public: __thiscall FirstMenu::FirstMenu(void)" (??0FirstMenu@@QAE@XZ)
+     1>Game.obj : error LNK2001: unresolved external symbol "public: __thiscall UIObject::UIObject(char const *,int,int,int,int,int)" (??0UIObject@@QAE@PBDHHHHH@Z)
+     1>FirstMenu.obj : error LNK2001: unresolved external symbol "private: static class Destroyer<class DirectXRenderer> DirectXRenderer::destroyer" (?destroyer@DirectXRenderer@@0V?$Destroyer@VDirectXRenderer@@@@A)
+     1>Game.obj : error LNK2001: unresolved external symbol "private: static class Destroyer<class DirectXRenderer> DirectXRenderer::destroyer" (?destroyer@DirectXRenderer@@0V?$Destroyer@VDirectXRenderer@@@@A)
+     1>main.obj : error LNK2019: unresolved external symbol "private: static class Destroyer<class DirectXRenderer> DirectXRenderer::destroyer" (?destroyer@DirectXRenderer@@0V?$Destroyer@VDirectXRenderer@@@@A) referenced in function "private: __thiscall DirectXRenderer::DirectXRenderer(void)" (??0DirectXRenderer@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2001: unresolved external symbol "private: static class DirectXRenderer * DirectXRenderer::pInstance" (?pInstance@DirectXRenderer@@0PAV1@A)
+     1>Game.obj : error LNK2019: unresolved external symbol "private: static class DirectXRenderer * DirectXRenderer::pInstance" (?pInstance@DirectXRenderer@@0PAV1@A) referenced in function "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
+     1>main.obj : error LNK2001: unresolved external symbol "private: static class DirectXRenderer * DirectXRenderer::pInstance" (?pInstance@DirectXRenderer@@0PAV1@A)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol _Direct3DCreate9@4 referenced in function "private: __thiscall DirectXRenderer::DirectXRenderer(void)" (??0DirectXRenderer@@AAE@XZ)
+     1>Game.obj : error LNK2001: unresolved external symbol _Direct3DCreate9@4
+     1>main.obj : error LNK2001: unresolved external symbol _Direct3DCreate9@4
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "private: static long __stdcall DirectXRenderer::WndProc(struct HWND__ *,unsigned int,unsigned int,long)" (?WndProc@DirectXRenderer@@CGJPAUHWND__@@IIJ@Z) referenced in function "private: __thiscall DirectXRenderer::DirectXRenderer(void)" (??0DirectXRenderer@@AAE@XZ)
+     1>Game.obj : error LNK2001: unresolved external symbol "private: static long __stdcall DirectXRenderer::WndProc(struct HWND__ *,unsigned int,unsigned int,long)" (?WndProc@DirectXRenderer@@CGJPAUHWND__@@IIJ@Z)
+     1>main.obj : error LNK2001: unresolved external symbol "private: static long __stdcall DirectXRenderer::WndProc(struct HWND__ *,unsigned int,unsigned int,long)" (?WndProc@DirectXRenderer@@CGJPAUHWND__@@IIJ@Z)
+     1>FirstMenu.obj : error LNK2001: unresolved external symbol "private: static class Destroyer<class LogManager> LogManager::_destroyer" (?_destroyer@LogManager@@0V?$Destroyer@VLogManager@@@@A)
+     1>Game.obj : error LNK2019: unresolved external symbol "private: static class Destroyer<class LogManager> LogManager::_destroyer" (?_destroyer@LogManager@@0V?$Destroyer@VLogManager@@@@A) referenced in function "public: void __cdecl LogManager::trace(char *,...)" (?trace@LogManager@@QAAXPADZZ)
+     1>main.obj : error LNK2001: unresolved external symbol "private: static class Destroyer<class LogManager> LogManager::_destroyer" (?_destroyer@LogManager@@0V?$Destroyer@VLogManager@@@@A)
+     1>FirstMenu.obj : error LNK2001: unresolved external symbol "private: static class LogManager * LogManager::_instance" (?_instance@LogManager@@0PAV1@A)
+     1>Game.obj : error LNK2001: unresolved external symbol "private: static class LogManager * LogManager::_instance" (?_instance@LogManager@@0PAV1@A)
+     1>main.obj : error LNK2019: unresolved external symbol "private: static class LogManager * LogManager::_instance" (?_instance@LogManager@@0PAV1@A) referenced in function "private: char * __thiscall LogManager::getTime(void)" (?getTime@LogManager@@AAEPADXZ)
+     1>FirstMenu.obj : error LNK2001: unresolved external symbol "private: static class Destroyer<class SoundEngine> SoundEngine::destroyer" (?destroyer@SoundEngine@@0V?$Destroyer@VSoundEngine@@@@A)
+     1>FirstMenu.obj : error LNK2001: unresolved external symbol "private: static class SoundEngine * SoundEngine::pInstance" (?pInstance@SoundEngine@@0PAV1@A)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::playSound(enum FMOD_CHANNELINDEX,class FMOD::Sound *,bool,class FMOD::Channel * *)" (?playSound@System@FMOD@@QAG?AW4FMOD_RESULT@@W4FMOD_CHANNELINDEX@@PAVSound@2@_NPAPAVChannel@2@@Z) referenced in function "public: void __thiscall SoundEngine::playMusic(char const *)" (?playMusic@SoundEngine@@QAEXPBD@Z)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::Channel::stop(void)" (?stop@Channel@FMOD@@QAG?AW4FMOD_RESULT@@XZ) referenced in function "public: void __thiscall SoundEngine::playMusic(char const *)" (?playMusic@SoundEngine@@QAEXPBD@Z)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::Sound::setMode(unsigned int)" (?setMode@Sound@FMOD@@QAG?AW4FMOD_RESULT@@I@Z) referenced in function "public: void __thiscall SoundEngine::playMusic(char const *)" (?playMusic@SoundEngine@@QAEXPBD@Z)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::createStream(char const *,unsigned int,struct FMOD_CREATESOUNDEXINFO *,class FMOD::Sound * *)" (?createStream@System@FMOD@@QAG?AW4FMOD_RESULT@@PBDIPAUFMOD_CREATESOUNDEXINFO@@PAPAVSound@2@@Z) referenced in function "public: void __thiscall SoundEngine::playMusic(char const *)" (?playMusic@SoundEngine@@QAEXPBD@Z)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::init(int,unsigned int,void *)" (?init@System@FMOD@@QAG?AW4FMOD_RESULT@@HIPAX@Z) referenced in function "private: __thiscall SoundEngine::SoundEngine(void)" (??0SoundEngine@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::getDriverInfo(int,char *,int,struct FMOD_GUID *)" (?getDriverInfo@System@FMOD@@QAG?AW4FMOD_RESULT@@HPADHPAUFMOD_GUID@@@Z) referenced in function "private: __thiscall SoundEngine::SoundEngine(void)" (??0SoundEngine@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::setSpeakerMode(enum FMOD_SPEAKERMODE)" (?setSpeakerMode@System@FMOD@@QAG?AW4FMOD_RESULT@@W4FMOD_SPEAKERMODE@@@Z) referenced in function "private: __thiscall SoundEngine::SoundEngine(void)" (??0SoundEngine@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::getDriverCaps(int,unsigned int *,int *,int *,enum FMOD_SPEAKERMODE *)" (?getDriverCaps@System@FMOD@@QAG?AW4FMOD_RESULT@@HPAIPAH1PAW4FMOD_SPEAKERMODE@@@Z) referenced in function "private: __thiscall SoundEngine::SoundEngine(void)" (??0SoundEngine@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::setOutput(enum FMOD_OUTPUTTYPE)" (?setOutput@System@FMOD@@QAG?AW4FMOD_RESULT@@W4FMOD_OUTPUTTYPE@@@Z) referenced in function "private: __thiscall SoundEngine::SoundEngine(void)" (??0SoundEngine@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::getNumDrivers(int *)" (?getNumDrivers@System@FMOD@@QAG?AW4FMOD_RESULT@@PAH@Z) referenced in function "private: __thiscall SoundEngine::SoundEngine(void)" (??0SoundEngine@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __stdcall FMOD::System::getVersion(unsigned int *)" (?getVersion@System@FMOD@@QAG?AW4FMOD_RESULT@@PAI@Z) referenced in function "private: __thiscall SoundEngine::SoundEngine(void)" (??0SoundEngine@@AAE@XZ)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol _FMOD_System_Create@4 referenced in function "enum FMOD_RESULT __cdecl FMOD::System_Create(class FMOD::System * *)" (?System_Create@FMOD@@YA?AW4FMOD_RESULT@@PAPAVSystem@1@@Z)
+     1>FirstMenu.obj : error LNK2019: unresolved external symbol "public: void __thiscall UIObject::render(void)" (?render@UIObject@@QAEXXZ) referenced in function "private: virtual void __thiscall FirstMenu::Render(void)" (?Render@FirstMenu@@EAEXXZ)
+     1>Game.obj : error LNK2001: unresolved external symbol "public: void __thiscall UIObject::render(void)" (?render@UIObject@@QAEXXZ)
+     1>Game.obj : error LNK2019: unresolved external symbol "public: __thiscall SceneNode::SceneNode(char const *,float,float,float)" (??0SceneNode@@QAE@PBDMMM@Z) referenced in function "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
+     1>Game.obj : error LNK2019: unresolved external symbol "public: void __thiscall SceneNode::Render(void)" (?Render@SceneNode@@QAEXXZ) referenced in function "private: virtual void __thiscall Game::Render(void)" (?Render@Game@@EAEXXZ)
+     1>Game.obj : error LNK2001: unresolved external symbol "private: static class Destroyer<class Camera> Camera::destroyer" (?destroyer@Camera@@0V?$Destroyer@VCamera@@@@A)
+     1>Game.obj : error LNK2001: unresolved external symbol "private: static class Camera * Camera::pInstance" (?pInstance@Camera@@0PAV1@A)
+     1>Game.obj : error LNK2019: unresolved external symbol _D3DXMatrixPerspectiveFovLH@20 referenced in function "public: void __thiscall Camera::render(void)" (?render@Camera@@QAEXXZ)
+     1>Game.obj : error LNK2019: unresolved external symbol _D3DXMatrixLookAtLH@16 referenced in function "public: void __thiscall Camera::render(void)" (?render@Camera@@QAEXXZ)
+     1>D:\Documents\Dropbox\Dropbox\Capstone\Debug\Game.exe : fatal error LNK1120: 29 unresolved externals
+     1>Done Building Project "D:\Documents\Dropbox\Dropbox\Capstone\Game\Game.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.43

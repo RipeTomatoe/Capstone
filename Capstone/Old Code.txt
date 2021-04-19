@@ -1,0 +1,376 @@
+#include "SceneNode.h"
+#include "MaterialManager.h"
+
+SceneNode::SceneNode(const char* fileName)
+{
+	pAsset = new AssetHelper();
+
+	dTime = 0;
+
+	char temp[255];
+	sprintf(temp, "Models/%s", fileName);
+
+	if(loadAsset(temp))
+	{
+		LogManager::getInstance()->trace("[ERROR] Model loading failed. (%s)", fileName);
+		PostQuitMessage(1);
+	}
+}
+
+int SceneNode::loadAsset(const char* fileName)
+{
+	//pAsset->paScene = (aiScene*)aiImportFile(fileName, 
+	//	aiProcess_CalcTangentSpace			| //calculate tangents and bitangents, if possible
+	//	aiProcess_JoinIdenticalVertices		| //join identical vertices
+	//	aiProcess_ValidateDataStructure		| //perform a ful validation of the loaders output
+	//	aiProcess_ImproveCacheLocality		| //improve the cache locality of the output vertices
+	//	aiProcess_RemoveRedundantMaterials	| //remove redundant materials
+	//	aiProcess_FindDegenerates			| //remove degenerated polygons from the import
+	//	aiProcess_FindInvalidData			| //detect invalid model data (such as invalid normal vectors and such)
+	//	aiProcess_GenUVCoords				| //convert spherical, cylindrical, box and planar mapping to proper UVs
+	//	aiProcess_TransformUVCoords			| //preprocess UV transformations
+	//	aiProcess_FindInstances				| //search for instanced meshes and remove them by reference to one master
+	//	aiProcess_LimitBoneWeights			| //limit bone weights to 4 per vertex
+	//	aiProcess_OptimizeMeshes			| //if possible, join small meshes
+	//	aiProcess_GenSmoothNormals			| //generate smooth normal vectors
+	//	aiProcess_SplitLargeMeshes			| //split large, unrenderable meshes into submeshes
+	//	aiProcess_Triangulate				| //convert faces to triangles (this is the best feature ever)
+	//	aiProcess_ConvertToLeftHanded		| //make it D3D compatible
+	//	aiProcess_SortByPType				| //make meshes which consist of a single type of primitive
+	//	0);
+
+	//if(pAsset->paScene) 
+	//{
+	//	pAsset->ppaMeshes = new AssetHelper::MeshHelper*[pAsset->paScene->mNumMeshes]();
+	//	for(UINT i = 0; i < pAsset->paScene->mNumMeshes; ++i)
+	//		pAsset->ppaMeshes[i] = new AssetHelper::MeshHelper();
+
+	//	pAsset->mAnimator = new Animator(pAsset->paScene);
+
+	//	//CREATING DATA!
+
+	//	for (UINT i = 0; i < pAsset->paScene->mNumMeshes; ++i)
+	//	{
+	//		const aiMesh* mesh = pAsset->paScene->mMeshes[i];
+
+	//		//create the material
+	//		if(!pAsset->ppaMeshes[i]->piEffect)
+	//		{
+	//			//create material!
+	//			MaterialManager::getInstance()->CreateMaterial(pAsset, i);
+	//		}
+
+	//		//create vertex buffer
+	//		if(FAILED(DirectXRenderer::getInstance()->getDevice()->CreateVertexBuffer(sizeof(DirectXRenderer::VERTEX3D) * mesh->mNumVertices,
+	//			D3DUSAGE_WRITEONLY,
+	//			0,
+	//			D3DPOOL_MANAGED,
+	//			&pAsset->ppaMeshes[i]->piVB,
+	//			NULL)))
+	//		{
+	//			LogManager::getInstance()->trace("[ERROR] Failed to create Vertex Buffer");
+	//			return 1;
+	//		}
+
+	//		//I honestly don't know what this does yet
+	//		DWORD dwUsage = 0;
+	//		if (pAsset->ppaMeshes[i]->piOpacityTexture || 1.0f != pAsset->ppaMeshes[i]->fOpacity)
+	//			dwUsage |= D3DUSAGE_DYNAMIC;
+
+	//		//check what kind of primitive they are
+	//		UINT nidx;
+	//		switch (mesh->mPrimitiveTypes)
+	//		{
+	//			case aiPrimitiveType_POINT:
+	//				nidx = 1;break;
+	//			case aiPrimitiveType_LINE:
+	//				nidx = 2;break;
+	//			case aiPrimitiveType_TRIANGLE:
+	//				nidx = 3;break;
+	//		};
+
+	//		//this checks whether we should use 16 or 32 bit indices!
+	//		if(mesh->mNumFaces * 3 >= 65536)
+	//		{
+	//			if(FAILED(DirectXRenderer::getInstance()->getDevice()->CreateIndexBuffer(
+	//				4 * mesh->mNumFaces * nidx,
+	//				D3DUSAGE_WRITEONLY | dwUsage,
+	//				D3DFMT_INDEX32,
+	//				D3DPOOL_MANAGED,
+	//				&pAsset->ppaMeshes[i]->piIB,
+	//				NULL)))
+	//			{
+	//				LogManager::getInstance()->trace("[ERROR] Failed to create 32 bit index buffer");
+	//				return 1;
+	//			}
+
+	//			//fill that shit in!
+	//			UINT* pniData;
+	//			pAsset->ppaMeshes[i]->piIB->Lock(NULL,NULL,(void**)&pniData,NULL);
+	//			for(UINT j = 0; j < mesh->mNumFaces; ++j)
+	//			{
+	//				for(UINT k = 0; k < nidx; ++k)
+	//				{
+	//					*pniData++ = mesh->mFaces[j].mIndices[k];
+	//				}
+	//			}
+	//		}
+	//		else
+	//		{
+	//			if(FAILED(DirectXRenderer::getInstance()->getDevice()->CreateIndexBuffer(
+	//				4 * mesh->mNumFaces * nidx,
+	//				D3DUSAGE_WRITEONLY | dwUsage,
+	//				D3DFMT_INDEX16,
+	//				D3DPOOL_MANAGED,
+	//				&pAsset->ppaMeshes[i]->piIB,
+	//				NULL)))
+	//			{
+	//				LogManager::getInstance()->trace("[ERROR] Failed to create 16 bit index buffer");
+	//				return 1;
+	//			}
+
+	//			//FILL THAT SHIT IN! 16-bit style!
+	//			UINT16* pniData;
+	//			pAsset->ppaMeshes[i]->piIB->Lock(NULL,NULL,(void**)&pniData,NULL);
+	//			for(UINT j = 0; j < mesh->mNumFaces; ++j)
+	//			{
+	//				for(UINT k = 0; k < nidx; ++k)
+	//				{
+	//					*pniData++ = (UINT16)mesh->mFaces[j].mIndices[k];
+	//				}
+	//			}
+	//		}
+	//		pAsset->ppaMeshes[i]->piIB->Unlock();
+
+	//		//collect weights on vertices. That line is messed up.
+	//		std::vector<std::vector<aiVertexWeight> > weightsPerVertex(mesh->mNumVertices);
+	//		for(UINT a = 0; a < mesh->mNumBones; a++)
+	//		{
+	//			const aiBone* bone = mesh->mBones[a];
+	//			for(UINT b = 0; b < bone->mNumWeights; b++)
+	//			{
+	//				weightsPerVertex[bone->mWeights[b].mVertexId].push_back(aiVertexWeight(a, bone->mWeights[b].mWeight));
+	//			}
+	//		}
+
+	//		//fill in all the vertex buffer!
+	//		DirectXRenderer::VERTEX3D* pvData;
+	//		pAsset->ppaMeshes[i]->piVB->Lock(NULL,NULL,(void**)&pvData,NULL);
+	//		for(UINT x = 0; x < mesh->mNumVertices; ++x)
+	//		{
+	//			pvData->pX = mesh->mVertices[x].x;
+	//			pvData->pY = mesh->mVertices[x].y;
+	//			pvData->pZ = mesh->mVertices[x].z;
+
+	//			if(mesh->mNormals == NULL)
+	//			{
+	//				pvData->nX = pvData->nY = pvData->nZ = 0.0f;
+	//			}
+	//			else
+	//			{
+	//				pvData->nX = mesh->mNormals[x].x;
+	//				pvData->nY = mesh->mNormals[x].y;
+	//				pvData->nZ = mesh->mNormals[x].z;
+	//			}
+
+	//			if(mesh->mTangents == NULL)
+	//			{
+	//				pvData->tX = pvData->tY = pvData->tZ = 0.0f;
+	//				pvData->bX = pvData->bY = pvData->bZ = 0.0f;
+	//			}
+	//			else
+	//			{
+	//				pvData->tX = mesh->mTangents[x].x;
+	//				pvData->tY = mesh->mTangents[x].y;
+	//				pvData->tZ = mesh->mTangents[x].z;
+
+	//				pvData->bX = mesh->mBitangents[x].x;
+	//				pvData->bY = mesh->mBitangents[x].y;
+	//				pvData->bZ = mesh->mBitangents[x].z;
+	//			}
+
+	//			if(mesh->HasVertexColors(0))
+	//				pvData->dColorDiffuse = D3DCOLOR_ARGB(((BYTE)std::max(std::min(mesh->mColors[0][x].a * 255.0f, 255.0f),0.0f)),
+	//					((BYTE)std::max(std::min(mesh->mColors[0][x].r * 255.0f, 255.0f),0.0f)),
+	//					((BYTE)std::max(std::min(mesh->mColors[0][x].g * 255.0f, 255.0f),0.0f)),
+	//					((BYTE)std::max(std::min(mesh->mColors[0][x].b * 255.0f, 255.0f),0.0f)));
+	//			else pvData->dColorDiffuse = D3DCOLOR_ARGB(0xff,0xff,0xff,0xff);
+
+	//			if(mesh->HasTextureCoords(0))
+	//			{
+	//				pvData->U1 = mesh->mTextureCoords[0][x].x;
+	//				pvData->V1 = mesh->mTextureCoords[0][x].y;
+	//			}
+	//			else
+	//			{
+	//				pvData->U1 = pvData->V1 = 0.5f;
+	//			}
+
+	//			if(mesh->HasTextureCoords(1))
+	//			{
+	//				pvData->U2 = mesh->mTextureCoords[1][x].x;
+	//				pvData->V2 = mesh->mTextureCoords[1][x].y;
+	//			}
+	//			else 
+	//			{
+	//				pvData->U2 = pvData->V2 = 0.5f;
+	//			}
+
+	//			//Bone indices and weights
+	//			//TODO: Check if this is necessary
+	//			if(mesh->HasBones())
+	//			{
+	//				BYTE boneIndices[4] = {0,0,0,0};
+	//				BYTE boneWeights[4] = {0,0,0,0};
+
+	//				ai_assert(weightsPerVertex[x].size() <= 4);
+
+	//				for(UINT a = 0; a < weightsPerVertex[x].size(); a++)
+	//				{
+	//					boneIndices[a] = weightsPerVertex[x][a].mVertexId;
+	//					boneWeights[a] = (BYTE)(weightsPerVertex[x][a].mWeight * 255.0f);
+	//				}
+
+	//				memcpy(pvData->mBoneIndices, boneIndices, sizeof(boneIndices));
+	//				memcpy(pvData->mBoneWeights, boneWeights, sizeof(boneWeights));
+	//			}
+	//			else
+	//			{
+	//				memset(pvData->mBoneIndices, 0, sizeof(pvData->mBoneIndices));
+	//				memset(pvData->mBoneWeights, 0, sizeof(pvData->mBoneWeights));
+	//			}
+
+	//			++pvData;
+	//		}
+	//		pAsset->ppaMeshes[i]->piVB->Unlock();
+	//	}
+	//	return 0;
+	//}
+	//else return 1;
+}
+
+void SceneNode::DrawUnsorted(UINT iIndex)
+{
+	//ai_assert(iIndex < pAsset->paScene->mNumMeshes);
+
+	//// set vertex and index buffer
+	//DirectXRenderer::getInstance()->getDevice()->SetStreamSource(0,pAsset->ppaMeshes[iIndex]->piVB,0,
+	//	sizeof(DirectXRenderer::VERTEX3D));
+
+	//DirectXRenderer::getInstance()->getDevice()->SetIndices(pAsset->ppaMeshes[iIndex]->piIB);
+
+	//D3DPRIMITIVETYPE type;
+	//switch (pAsset->paScene->mMeshes[iIndex]->mPrimitiveTypes) {
+	//	case aiPrimitiveType_POINT:
+	//		type = D3DPT_POINTLIST;break;
+	//	case aiPrimitiveType_LINE:
+	//		type = D3DPT_LINELIST;break;
+	//	case aiPrimitiveType_TRIANGLE:
+	//		type = D3DPT_TRIANGLELIST;break;
+	//}
+	//// and draw the mesh
+	//DirectXRenderer::getInstance()->getDevice()->DrawIndexedPrimitive(type,
+	//	0,0,
+	//	pAsset->paScene->mMeshes[iIndex]->mNumVertices,0,
+	//	pAsset->paScene->mMeshes[iIndex]->mNumFaces);
+}
+
+void SceneNode::RenderNode(aiNode* node, const aiMatrix4x4& matrix)
+{
+	////pAsset->mAnimator->SetAnimIndex(1);
+	//aiMatrix4x4 aiMe = pAsset->mAnimator->GetGlobalTransform(node);
+	//aiMe.Transpose();
+	//aiMe *= matrix;	
+
+	//aiMatrix4x4 pcProj = aiMe * mViewProjection;
+	//aiMatrix4x4 pcCam = aiMe;
+	//pcCam.Inverse().Transpose();
+	//
+	//DirectXRenderer::getInstance()->setGameVertDecl();
+
+	//for(UINT i = 0; i < node->mNumMeshes; ++i)
+	//{
+	//	const aiMesh* mesh = pAsset->paScene->mMeshes[node->mMeshes[i]];
+	//	AssetHelper::MeshHelper* helper = pAsset->ppaMeshes[node->mMeshes[i]];
+
+	//	static float matrices[4*4*60];
+	//	float* tempmat = matrices;
+	//	const std::vector<aiMatrix4x4>& boneMats = pAsset->mAnimator->GetBoneMatrices(node, i);
+
+	//	ai_assert( boneMats.size() == mesh->mNumBones);
+
+	//	for( unsigned int a = 0; a < mesh->mNumBones; a++)
+	//	{
+	//		const aiMatrix4x4& mat = boneMats[a];
+	//		*tempmat++ = mat.a1; *tempmat++ = mat.a2; *tempmat++ = mat.a3; *tempmat++ = mat.a4;  
+	//		*tempmat++ = mat.b1; *tempmat++ = mat.b2; *tempmat++ = mat.b3; *tempmat++ = mat.b4;
+	//		*tempmat++ = mat.c1; *tempmat++ = mat.c2; *tempmat++ = mat.c3; *tempmat++ = mat.c4; 
+	//		*tempmat++ = mat.d1; *tempmat++ = mat.d2; *tempmat++ = mat.d3; *tempmat++ = mat.d4;
+	//	}
+	//	helper->piEffect->SetMatrixTransposeArray( "gBoneMatrix", (D3DXMATRIX*)matrices, 60);
+
+	//	MaterialManager::getInstance()->SetupMaterial(helper, pcProj, aiMe, pcCam);
+	//	DrawUnsorted(node->mMeshes[i]);
+	//	MaterialManager::getInstance()->EndMaterial(helper);
+	//}
+
+	////render all children
+	//for(UINT i = 0; i < node->mNumChildren; ++i)
+	//	RenderNode(node->mChildren[i], matrix);
+}
+
+void SceneNode::Render(void)
+{
+	//static double lastPlaying = 0.;
+
+	//ai_assert(pAsset->mAnimator);
+
+	//dTime += clock()/ double( CLOCKS_PER_SEC)   -lastPlaying;
+
+	//double time = dTime;
+	//aiAnimation* mAnim = pAsset->mAnimator->CurrentAnim();
+	//if(  mAnim && mAnim->mDuration > 0.0) {
+	//	double tps = mAnim->mTicksPerSecond ? mAnim->mTicksPerSecond : 25.f;
+	//	time = fmod( time, mAnim->mDuration/tps);		
+	//}
+
+	//pAsset->mAnimator->Calculate( time );
+	//lastPlaying = dTime;
+
+	//aiMatrix4x4 pcProj;
+
+	////Getting the projection Matrix
+	//{
+	//	const float fFarPlane = 100.0f;
+	//	const float fNearPlane = 0.1f;
+	//	const float fFOV = (float)(45.0 * 0.0174532925);
+
+	//	const float s = 1.0f / tanf(fFOV * 0.5f);
+	//	const float Q = fFarPlane / (fFarPlane - fNearPlane);
+
+	//	const float fAspect = DirectXRenderer::getInstance()->getAspectRatio();
+
+	//	pcProj = aiMatrix4x4(
+	//		s / fAspect, 0.0f, 0.0f, 0.0f,
+	//		0.0f, s, 0.0f, 0.0f,
+	//		0.0f, 0.0f, Q, 1.0f,
+	//		0.0f, 0.0f, -Q * fNearPlane, 0.0f);
+	//}
+
+	//mViewProjection = mViewProjection * pcProj;
+
+	//aiMatrix4x4 m;
+	//if (NULL != pAsset && NULL != pAsset->paScene->mRootNode)
+	//{
+	//	m =  DirectXRenderer::getInstance()->mWorld * DirectXRenderer::getInstance()->mWorldRotate;
+	//	RenderNode(pAsset->paScene->mRootNode,m);
+	//}
+}
+
+SceneNode::~SceneNode(void)
+{
+	if(pAsset)
+	{
+		delete pAsset;
+	}
+}

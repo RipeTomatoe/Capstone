@@ -1,0 +1,59 @@
+﻿Build started 22/04/2012 3:48:13 PM.
+     1>Project "F:\Documents\Dropbox\Dropbox\Capstone\Capstone\Capstone.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\Capstone.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"E:\Programs\DirectX SDK (June 2010)\\Include" /I"E:\Programs\Havok\2011 3 0 r1\Source" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FirstMenu.cpp Game.cpp GameOver.cpp SceneNodePhysics.cpp main.cpp
+         FirstMenu.cpp
+         E:\Programs\DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+         Game.cpp
+         E:\Programs\DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+         GameOver.cpp
+         E:\Programs\DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+         SceneNodePhysics.cpp
+         E:\Programs\DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+         main.cpp
+         E:\Programs\DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Documents\Dropbox\Dropbox\Capstone\Release\Capstone.exe" /NOLOGO /LIBPATH:"E:\Programs\DirectX SDK (June 2010)\\Lib\x86" /LIBPATH:F:\Documents\Dropbox\Dropbox\Capstone\Capstone\\FMOD\Win64\lib /LIBPATH:F:\Documents\Dropbox\Dropbox\Capstone\Capstone\\FMOD\Win32\lib /LIBPATH:"E:\Programs\DirectX SDK (June 2010)\\Lib\x64" /LIBPATH:"F:\Documents\Dropbox\Dropbox\Capstone\Capstone\\assimp\lib\assimp_release-dll_win32" /LIBPATH:"E:\Programs\Havok\2011 3 0 r1\Lib\win32_vs2010\release_multithreaded" d3d9.lib d3dx9.lib dinput8.lib dxguid.lib fmodex64_vc.lib fmodexL64_vc.lib fmodex_vc.lib fmodexL_vc.lib assimp.lib hkBase.lib hkCompat.lib hkSceneData.lib hkSerialize.lib hkVisualize.lib hkInternal.lib hkGeometryUtilities.lib hkcdInternal.lib hkcdCollide.lib hkpCollide.lib hkpConstraintSolver.lib hkpDynamics.lib hkpInternal.lib hkpUtilities.lib hkpVehicle.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Capstone.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\Documents\Dropbox\Dropbox\Capstone\Release\Capstone.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Documents\Dropbox\Dropbox\Capstone\Release\Capstone.lib" /MACHINE:X86 Release\Capstone.res
+         Release\AISeek.obj
+         Release\AIWander.obj
+         Release\Basket.obj
+         Release\Camera.obj
+         Release\DebugCube.obj
+         Release\DirectXRenderer.obj
+         Release\Effect.obj
+         Release\Enemy.obj
+         Release\FirstMenu.obj
+         Release\Game.obj
+         Release\GameOver.obj
+         Release\Input.obj
+         Release\Light.obj
+         Release\LogManager.obj
+         Release\main.obj
+         Release\Mesh.obj
+         Release\Pause.obj
+         Release\Portal.obj
+         Release\RandomNumber.obj
+         Release\RenderablePhysicsMap.obj
+         Release\SceneNode.obj
+         Release\SceneNodePhysics.obj
+         Release\Settings.obj
+         Release\SoundEngine.obj
+         Release\UIObject.obj
+         Release\Vector.obj
+         Generating code
+         Finished generating code
+         Capstone.vcxproj -> F:\Documents\Dropbox\Dropbox\Capstone\Release\Capstone.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\Documents\Dropbox\Dropbox\Capstone\Release\Capstone.exe;#1" /manifest Release\Capstone.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\Capstone.unsuccessfulbuild".
+         Touching "Release\Capstone.lastbuildstate".
+     1>Done Building Project "F:\Documents\Dropbox\Dropbox\Capstone\Capstone\Capstone.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.09
